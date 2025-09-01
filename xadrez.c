@@ -2,10 +2,8 @@
 
 int main(){
     int i = 0;
-
-    printf("***Jogo de Xadrez***\n");
     //Movimento da peça Torre 5 casas para a direita
-    printf("\nMovimento da peça de Xadrez Torre:\n");
+    printf("Movimento da peça de Xadrez Torre:\n");
     while(i < 5){
         printf("Direita!\n");
         i++;
@@ -23,11 +21,22 @@ int main(){
     for(i = 0; i < 8; i++){
         printf("Esquerda!\n");
     }
+    //Movimento da peça Cavalo 2 casas para baixo e 1 casa para esquerda
+    printf("\nMovimento da peça de Xadrez Cavalo:\n");
+    i = 0; //Reinicia o contator
+    while(i < 1){
+        for(int j = 0; j < 2; j++){
+            printf("Baixo!\n");
+        }
+        printf("Esquerda!\n");
+        i++;
+    }
 
     return 0;
 
     /*Bispo: 5 casas na diagonal superior direita
       Torre: 5 casas para a direita
-      Rainha: 8 casas para a esquerda*/
+      Rainha: 8 casas para a esquerda
+      Cavalo: 2 casas para bairo e 1 casa  para esquerda */
 
 }
