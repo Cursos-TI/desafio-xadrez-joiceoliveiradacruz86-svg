@@ -1,42 +1,49 @@
-#include <stdio.h>
+#include<stdio.h>
+
+void movimentoTorre(int casas){
+    if(casas > 0) {
+        printf("Direita!\n");
+        movimentoTorre(casas - 1);
+    }
+}
+void movimentoRainha(int casas){
+    if(casas > 0) {
+        printf("Esquerda!\n");
+        movimentoRainha(casas - 1);
+    }
+}
+void movimentoBispo(int casas){
+    if(casas > 0) {
+        printf("Cima, Direita!\n");
+        movimentoBispo(casas - 1);
+    }
+}
+
+void moverCavalo(int movimentos){
+    int i, j;
+
+    for (i = 0; i < movimentos; i++) {
+        for (j = 0; j < 2; j++) {
+            printf("Cima!\n");
+        }
+        printf("Direita!\n");
+    }
+}
 
 int main(){
-    int i = 0;
-    //Movimento da peça Torre 5 casas para a direita
+    printf("***Jogo de xadrez***\n");
     printf("Movimento da peça de Xadrez Torre:\n");
-    while(i < 5){
-        printf("Direita!\n");
-        i++;
-    }
-    //Movimento da peça Bispo 5 casas para a esquerda e para cia, simulando andar na diagonal
-    printf("\nMovimento da peça de Xadrez Bispo:\n");
-    i = 0; //Reinicia o contator
-    do {
-        printf("Cima, Esquerda!\n");
-        i++;
-    } while(i <= 4);
-    //Movimento da peça Rainha 8 casas para a esquerda
-    printf("\nMovimento da peça de Xadrez Rainha:\n");
+    movimentoTorre(5);
 
-    for(i = 0; i < 8; i++){
-        printf("Esquerda!\n");
-    }
-    //Movimento da peça Cavalo 2 casas para baixo e 1 casa para esquerda
+    printf("\nMovimento da peça de Xadrez Rainha:\n");
+    movimentoRainha(8);
+    
+    printf("\nMovimento da peça de Xadrez Bispo:\n");
+    movimentoBispo(5);
+    
     printf("\nMovimento da peça de Xadrez Cavalo:\n");
-    i = 0; //Reinicia o contator
-    while(i < 1){
-        for(int j = 0; j < 2; j++){
-            printf("Baixo!\n");
-        }
-        printf("Esquerda!\n");
-        i++;
-    }
+    moverCavalo(1);
+
 
     return 0;
-
-    /*Bispo: 5 casas na diagonal superior direita
-      Torre: 5 casas para a direita
-      Rainha: 8 casas para a esquerda
-      Cavalo: 2 casas para bairo e 1 casa  para esquerda */
-
 }
